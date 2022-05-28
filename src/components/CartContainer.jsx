@@ -38,7 +38,7 @@ export const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>&#8377;{total}</span>
+            total <span>&#8377;{total.toFixed(2)}</span>
           </h4>
         </div>
         <button className="btn clear-btn" onClick={handleClick}>
