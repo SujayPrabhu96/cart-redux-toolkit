@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, calculateTotal } from "../app/features/cart/cartSlice";
+import { calculateTotal } from "../app/features/cart/cartSlice";
+import { openModal } from "../app/features/modal/modalSlice";
 import { CartItem } from "./CartItem";
 
 export const CartContainer = () => {
@@ -10,7 +11,7 @@ export const CartContainer = () => {
     dispatch(calculateTotal());
   }, [cartItems, dispatch]);
 
-  const handleClick = () => dispatch(clearCart());
+  const handleClick = () => dispatch(openModal());
 
   if (!count) {
     return (
