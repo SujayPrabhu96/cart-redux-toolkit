@@ -52,17 +52,16 @@ const cartSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // eslint-disable-next-line no-unused-expressions
     builder.addCase(getCartItems.pending, (state) => {
       state.loading = true;
-    }),
-      builder.addCase(getCartItems.fulfilled, (state, { payload }) => {
-        state.loading = false;
-        state.cartItems = payload;
-      }),
-      builder.addCase(getCartItems.rejected, (state, { payload }) => {
-        state.loading = false;
-      });
+    });
+    builder.addCase(getCartItems.fulfilled, (state, { payload }) => {
+      state.loading = false;
+      state.cartItems = payload;
+    });
+    builder.addCase(getCartItems.rejected, (state, { payload }) => {
+      state.loading = false;
+    });
   },
 });
 
